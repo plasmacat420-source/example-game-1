@@ -5,10 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    public int totalDisplays = 2;
+
+    public float delayTime = 5f;
+
     public Animator transition;
 
     public float transitionTime = 1f;
 
+
+    void Start()
+    {
+        if(SceneManager.GetActiveScene().buildIndex < totalDisplays)
+        {
+            StartCoroutine(DisplayDelay());
+        }
+    }
+
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +30,7 @@ public class LevelLoader : MonoBehaviour
         {
             LoadNextLevel();
         }
-    }
+    }*/
 
     public void LoadNextLevel()
     {
@@ -30,5 +44,12 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
+    }
+
+    IEnumerator DisplayDelay()
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        LoadNextLevel();
     }
 }

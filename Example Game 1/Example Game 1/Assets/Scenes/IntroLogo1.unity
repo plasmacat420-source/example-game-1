@@ -384,5 +384,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5145581104750971399, guid: 296d4aecf366c194181bfd4d96a9f89b, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 296d4aecf366c194181bfd4d96a9f89b, type: 3}
